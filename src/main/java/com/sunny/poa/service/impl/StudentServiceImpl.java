@@ -6,6 +6,7 @@ import com.sunny.poa.service.StudentService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class StudentServiceImpl implements StudentService {
@@ -17,5 +18,8 @@ public class StudentServiceImpl implements StudentService {
         return studentDao.insert(student);
     }
 
-
+    @Override
+    public List<Student> getList() {
+        return studentDao.selectList(null);
+    }
 }
